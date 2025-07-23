@@ -1,8 +1,14 @@
 module.exports = function reverse(n) {
   if (n < 0) {
-    const num = `${n}`;
-    return Number(-1 * num.split('').reverse().join(''));
+    const res = n * -1;
+    const num = `${res}`;
+    const str = num.split('').reverse().join('');
+    return Number(str);
   }
   const num = `${n}`;
-  return Number(num.split('').reverse().join(''));
+  const arr = num.split('');
+  if (arr[-1] === '0') {
+    arr.shift();
+  }
+  return Number(arr.reverse().join(''));
 };
